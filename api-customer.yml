@@ -1,0 +1,33 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  application:
+    name: api-customer
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3307/dh202302-g2?createDatabaseIfNotExist=true&useUnicode=true&amp&characterEncoding=utf-8&autoReconnect=true
+    username: user
+    password: password
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+        show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+
+info:
+  application:
+    name: api-customer
+
+eureka:
+  instance:
+    hostname: localhost
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
