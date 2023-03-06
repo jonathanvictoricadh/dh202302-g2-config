@@ -10,10 +10,10 @@ spring:
         locator: true
           enabled: true
       routes:
-        - id:
-          uri:
+        - id: idUnicoDeEstearchivo
+          uri: lb://NombreDeLaApiRegistradaEnEureka
           predicates:
-            - Path=/api/v1/
+            - Path=/api/v1/ElPathDeLoQueSeConecte
 
 info:
   app:
