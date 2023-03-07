@@ -8,7 +8,7 @@ spring:
     gateway:
       discovery:
         locator: true
-          enabled: true
+          enabled: false
       routes:
         - id: id-api-customer
           uri: lb://api-customer
