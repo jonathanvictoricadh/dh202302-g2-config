@@ -8,13 +8,12 @@ spring:
     gateway:
       discovery:
         locator: true
-          enabled: false
+          enabled: true
       routes:
         - id: id-api-customer
           uri: lb://api-customer
           predicates:
             - Path=/api/customer/**
-            
         - id: id-api-wallet
           uri: lb://api-wallet
           predicates:
