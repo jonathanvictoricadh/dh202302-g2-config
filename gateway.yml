@@ -10,10 +10,15 @@ spring:
         locator: true
           enabled: true
       routes:
-        - id: idUnicoDeEstearchivo
-          uri: lb://NombreDeLaApiRegistradaEnEureka
+        - id: id-api-customer
+          uri: lb://api-customer
           predicates:
-            - Path=/api/v1/ElPathDeLoQueSeConecte
+            - Path=/api/customer/**
+            
+        - id: id-api-wallet
+          uri: lb://api-wallet
+          predicates:
+            - Path=/api/wallet/**
 
 info:
   app:
