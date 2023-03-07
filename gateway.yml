@@ -7,7 +7,7 @@ spring:
   cloud:
     gateway:
       discovery:
-        locator: false
+        locator:
           enabled: true
       routes:
         - id: id-api-customer
