@@ -18,6 +18,10 @@ spring:
           uri: lb://api-wallet
           predicates:
             - Path=/api/wallet/**
+        - id: id-api-margin
+          uri: lb://api-margin
+          predicates:
+            - Path=/api/calculate/**            
 
 info:
   app:
